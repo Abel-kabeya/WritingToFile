@@ -4,6 +4,7 @@
  */
 package za.ac.cput.writingtofile;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.Date;
 import javax.swing.JButton;
@@ -59,40 +60,51 @@ public class BasicStudentRegistration extends JFrame {
     private JButton btnReset;
     private JButton btnExit;
 
-    private JPanel panel1;
-    private JPanel panel2;
-    private JPanel panel3;
-    private JPanel panel4;
-    private JPanel panel5;
-    private JPanel panel6;
-    private JPanel panel7;
+    private JPanel panel1st;
+    private JPanel panel2nd;
+
+    private JPanel panelNorth;
+    private JPanel panelCenter;
+    private JPanel panelSouth;
 
     public BasicStudentRegistration() {
 
         lblTitle = new JLabel("Student Registration Form");
         lblSubTitle = new JLabel("Fill out the form carefully for registration");
 
-        panel1 = new JPanel();
-        panel2 = new JPanel();
+        panel1st = new JPanel();
+        panel1st.setLayout(new GridLayout(1, 3));
+        panel2nd = new JPanel();
+        panel2nd.setLayout(new GridLayout(1, 3));
+
+        panelNorth = new JPanel();
         lblStudentName = new JLabel("Student Name");
 
+        panelCenter = new JPanel();
         lblFirstName = new JLabel("First Name");
         txtFirstName = new JTextField();
+        panel1st.add(txtFirstName);
 
         lblMiddleName = new JLabel("Middle Name");
         txtMiddleName = new JTextField();
+        panel1st.add(txtMiddleName);
 
         lblLastName = new JLabel("Last Name");
         txtLastName = new JTextField();
+        panel1st.add(txtLastName);
 
         lblDOB = new JLabel("Birth Date");
         lblDay = new JLabel("Day");
         txtDay = new JTextField();
+        panel2nd.add(txtDay);
+
         lblMonth = new JLabel("Month");
         String months[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         cboMonth = new JComboBox(months);
+        panel2nd.add(cboMonth);
         lblYear = new JLabel("Year");
         txtYear = new JTextField();
+        panel2nd.add(txtYear);
 
         lblGender = new JLabel("Gebder");
         String gender[] = {"Male", "Female"};
@@ -116,43 +128,41 @@ public class BasicStudentRegistration extends JFrame {
             "Humanities", "Law", "MBA", "Personal Care and Fitness", "Social Studies and Media", "Travel and Hospitality"};
         cboCourses = new JComboBox(courses);
 
+        panelSouth = new JPanel();
         btnSave = new JButton("Save");
         btnReset = new JButton("Reset");
         btnExit = new JButton("Exit");
 
     }
-    
-    public void setGUI(){
-    
-        panel1.setLayout(new GridLayout(1, 1));
-        panel1.setLayout(new GridLayout(1, 3));
-        
-        panel1.add(lblStudentName);
-        
-        panel2.add(txtFirstName);
-        panel2.add(txtMiddleName);
-        panel2.add(txtLastName);
-    
-        this.add(panel1);
-        this.add(panel2);
+
+    public void setGUI() {
+
+        panelNorth.setLayout(new GridLayout(1, 1));
+        panelCenter.setLayout(new GridLayout(4, 2));
+        panelSouth.setLayout(new GridLayout(1, 3));
+
+        panelNorth.add(lblTitle);
+
+        //panelCenter.add(panel1st);
+        panelCenter.add(panel2nd , cboGender);
+        panelCenter.add(cboGender);
+//        panelCenter.add(txtStudentEmail);
+//        panelCenter.add(txtMobileNumber);
+//        panelCenter.add(txtAlternateNumber);
+//        panelCenter.add(txtNationality);
+//        panelCenter.add(cboCourses);
+
+        panelSouth.add(btnSave);
+        panelSouth.add(btnReset);
+        panelSouth.add(btnExit);
+
+        this.add(panelNorth, BorderLayout.NORTH);
+        this.add(panelCenter, BorderLayout.CENTER);
+        this.add(panelSouth, BorderLayout.SOUTH);
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
-    
-    
+
     }
-
-}
-
-class Run{
-
-    
-    public static void main(String[] args) {
-        
-        new BasicStudentRegistration().setGUI();
-        
-    }
-
-
 
 }
