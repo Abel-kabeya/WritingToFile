@@ -6,15 +6,20 @@ package za.ac.cput.writingtofile;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class BasicStudentRegistration extends JFrame {
+public class BasicStudentRegistration extends JFrame implements ActionListener {
 
     private JLabel lblTitle;
     private JLabel lblSubTitle;
@@ -59,7 +64,7 @@ public class BasicStudentRegistration extends JFrame {
     private JButton btnSave;
     private JButton btnReset;
     private JButton btnExit;
-    
+
     private JPanel panelDOB;
     private JPanel panelNorth;
     private JPanel panelCenter;
@@ -69,7 +74,7 @@ public class BasicStudentRegistration extends JFrame {
 
         lblTitle = new JLabel("   Student Registration Form");
         lblSubTitle = new JLabel("   Fill out the form carefully for registration");
-        
+
         panelNorth = new JPanel();
         lblStudentName = new JLabel("   Student Name");
 
@@ -126,22 +131,22 @@ public class BasicStudentRegistration extends JFrame {
         btnExit = new JButton("Exit");
 
     }
-    
-    public void setGUI(){
-    
+
+    public void setGUI() {
+
         panelNorth.setLayout(new GridLayout(3, 1));
         panelCenter.setLayout(new GridLayout(10, 2));
         panelSouth.setLayout(new GridLayout(1, 3));
-    
+
         panelNorth.add(lblTitle);
         panelNorth.add(lblSubTitle);
-    
+
         panelCenter.add(lblFirstName);
         panelCenter.add(txtFirstName);
         panelCenter.add(lblLastName);
         panelCenter.add(txtLastName);
         panelCenter.add(lblDOB);
-        panelCenter.add(panelDOB); 
+        panelCenter.add(panelDOB);
         panelCenter.add(lblGender);
         panelCenter.add(cboGender);
         panelCenter.add(lblStudentEmail);
@@ -154,18 +159,68 @@ public class BasicStudentRegistration extends JFrame {
         panelCenter.add(txtNationality);
         panelCenter.add(lblCourses);
         panelCenter.add(cboCourses);
-        
+
         panelSouth.add(btnSave);
         panelSouth.add(btnReset);
         panelSouth.add(btnExit);
         
+        btnSave.addActionListener(this);
+        btnReset.addActionListener(this);
+        btnExit.addActionListener(this);
+
         this.add(panelNorth, BorderLayout.NORTH);
         this.add(panelCenter, BorderLayout.CENTER);
         this.add(panelSouth, BorderLayout.SOUTH);
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+
+    }
     
+    public void writeToFile(){
+    
+        try{
+            
+            FileWriter fw = new FileWriter("StudentDetails.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            fw.write("============================== Student Deatils ===================================\n");
+            fw.write(String.format("%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\n","First Name","Last Name","Birth Day","Birth Month","Birth Year","Gender","Student E-mail","Mobile Number","Alternate Number","Nationality","Courses"));
+            fw.write("===========================================================================\n");
+            
+            
+           
+                    String output = String.format("%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s",
+                        txtFirstName.getText(),
+                        txtLastName.getText(),
+                        txtDay.getText(),
+                        cboMonth.getSelectedItem(),
+                        txtYear.getText(),
+                        cboGender.getSelectedItem(),
+                        txtStudentEmail.getText(),
+                        txtMobileNumber.getText(),
+                        txtAlternateNumber.getText(),
+                        txtNationality.getText(),
+                        cboCourses.getSelectedItem());
+                fw.write(output + "\n");
+                 fw.close();
+            }catch (Exception e) {
+            System.out.println(" Exception Error: " + e.getMessage());
+            System.out.println(" Error occured when writing to file ");
+        }
+ 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent g) {
+        if (g.getSource() == btnSave) {
+            
+            writeToFile();
+
+            JOptionPane.showMessageDialog(null, "All your information has been saved, have a good day",
+                    "Message", JOptionPane.INFORMATION_MESSAGE);
+            System.exit(0);
+
+        }
     }
 
 }

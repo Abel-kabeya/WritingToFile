@@ -1,0 +1,4 @@
+============================== Student Deatils ===================================
+First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
+===========================================================================
+ggggggg   	wwwwwww   	23        	January   	4444      	Male      	3434wewef 	wsefwefwefwefg	bgdbddtgtg	tddthtyhyhh	Computer Science and IT
