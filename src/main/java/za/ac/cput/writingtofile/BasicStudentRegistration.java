@@ -59,70 +59,62 @@ public class BasicStudentRegistration extends JFrame {
     private JButton btnSave;
     private JButton btnReset;
     private JButton btnExit;
-
-    private JPanel panel1st;
-    private JPanel panel2nd;
-
+    
+    private JPanel panelDOB;
     private JPanel panelNorth;
     private JPanel panelCenter;
     private JPanel panelSouth;
 
     public BasicStudentRegistration() {
 
-        lblTitle = new JLabel("Student Registration Form");
-        lblSubTitle = new JLabel("Fill out the form carefully for registration");
-
-        panel1st = new JPanel();
-        panel1st.setLayout(new GridLayout(1, 3));
-        panel2nd = new JPanel();
-        panel2nd.setLayout(new GridLayout(1, 3));
-
+        lblTitle = new JLabel("   Student Registration Form");
+        lblSubTitle = new JLabel("   Fill out the form carefully for registration");
+        
         panelNorth = new JPanel();
-        lblStudentName = new JLabel("Student Name");
+        lblStudentName = new JLabel("   Student Name");
 
         panelCenter = new JPanel();
-        lblFirstName = new JLabel("First Name");
+        lblFirstName = new JLabel("   First Name");
         txtFirstName = new JTextField();
-        panel1st.add(txtFirstName);
 
-        lblMiddleName = new JLabel("Middle Name");
+        lblMiddleName = new JLabel("   Middle Name");
         txtMiddleName = new JTextField();
-        panel1st.add(txtMiddleName);
 
-        lblLastName = new JLabel("Last Name");
+        lblLastName = new JLabel("   Last Name");
         txtLastName = new JTextField();
-        panel1st.add(txtLastName);
 
-        lblDOB = new JLabel("Birth Date");
-        lblDay = new JLabel("Day");
-        txtDay = new JTextField();
-        panel2nd.add(txtDay);
+        panelDOB = new JPanel();
+        panelDOB.setLayout(new GridLayout(1, 4));
+        lblDOB = new JLabel("   Birth Date");
+        lblDay = new JLabel("   Day");
+        txtDay = new JTextField(2);
+        panelDOB.add(txtDay);
 
-        lblMonth = new JLabel("Month");
+        lblMonth = new JLabel("   Month");
         String months[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         cboMonth = new JComboBox(months);
-        panel2nd.add(cboMonth);
-        lblYear = new JLabel("Year");
-        txtYear = new JTextField();
-        panel2nd.add(txtYear);
+        panelDOB.add(cboMonth);
+        lblYear = new JLabel("   Year");
+        txtYear = new JTextField(4);
+        panelDOB.add(txtYear);
 
-        lblGender = new JLabel("Gebder");
+        lblGender = new JLabel("   Gebder");
         String gender[] = {"Male", "Female"};
         cboGender = new JComboBox(gender);
 
-        lblStudentEmail = new JLabel("Student E-mail");
+        lblStudentEmail = new JLabel("   Student E-mail");
         txtStudentEmail = new JTextField();
 
-        lblMobileNumber = new JLabel("Mobile Number");
+        lblMobileNumber = new JLabel("   Mobile Number");
         txtMobileNumber = new JTextField();
 
-        lblAlternateNumber = new JLabel("Alternate Number");
+        lblAlternateNumber = new JLabel("   Alternate Number");
         txtAlternateNumber = new JTextField();
 
-        lblNationality = new JLabel("Nationality");
+        lblNationality = new JLabel("   Nationality");
         txtNationality = new JTextField();
 
-        lblCourses = new JLabel("Courses");
+        lblCourses = new JLabel("   Courses");
         String courses[] = {"Agriculture and Veterinary", "Applied and Pure Sciences", "Architecture and Construction", "Business and Management",
             "Computer Science and IT", "Creative Arts and Design", "Education and Trainning", "Engineering", "Health and Medicine",
             "Humanities", "Law", "MBA", "Personal Care and Fitness", "Social Studies and Media", "Travel and Hospitality"};
@@ -134,35 +126,46 @@ public class BasicStudentRegistration extends JFrame {
         btnExit = new JButton("Exit");
 
     }
-
-    public void setGUI() {
-
-        panelNorth.setLayout(new GridLayout(1, 1));
-        panelCenter.setLayout(new GridLayout(4, 2));
+    
+    public void setGUI(){
+    
+        panelNorth.setLayout(new GridLayout(3, 1));
+        panelCenter.setLayout(new GridLayout(10, 2));
         panelSouth.setLayout(new GridLayout(1, 3));
-
+    
         panelNorth.add(lblTitle);
-
-        //panelCenter.add(panel1st);
-        panelCenter.add(panel2nd , cboGender);
+        panelNorth.add(lblSubTitle);
+    
+        panelCenter.add(lblFirstName);
+        panelCenter.add(txtFirstName);
+        panelCenter.add(lblLastName);
+        panelCenter.add(txtLastName);
+        panelCenter.add(lblDOB);
+        panelCenter.add(panelDOB); 
+        panelCenter.add(lblGender);
         panelCenter.add(cboGender);
-//        panelCenter.add(txtStudentEmail);
-//        panelCenter.add(txtMobileNumber);
-//        panelCenter.add(txtAlternateNumber);
-//        panelCenter.add(txtNationality);
-//        panelCenter.add(cboCourses);
-
+        panelCenter.add(lblStudentEmail);
+        panelCenter.add(txtStudentEmail);
+        panelCenter.add(lblMobileNumber);
+        panelCenter.add(txtMobileNumber);
+        panelCenter.add(lblAlternateNumber);
+        panelCenter.add(txtAlternateNumber);
+        panelCenter.add(lblNationality);
+        panelCenter.add(txtNationality);
+        panelCenter.add(lblCourses);
+        panelCenter.add(cboCourses);
+        
         panelSouth.add(btnSave);
         panelSouth.add(btnReset);
         panelSouth.add(btnExit);
-
+        
         this.add(panelNorth, BorderLayout.NORTH);
         this.add(panelCenter, BorderLayout.CENTER);
         this.add(panelSouth, BorderLayout.SOUTH);
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
-
+    
     }
 
 }
