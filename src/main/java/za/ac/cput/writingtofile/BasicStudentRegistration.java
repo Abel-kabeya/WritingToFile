@@ -181,11 +181,11 @@ public class BasicStudentRegistration extends JFrame implements ActionListener {
     
         try{
             
-            FileWriter fw = new FileWriter("StudentDetails.txt");
+            FileWriter fw = new FileWriter("StudentDetails.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
-            fw.write("============================== Student Deatils ===================================\n");
+            fw.write("===================================================================================================================================================================== Student Deatils =====\n");
             fw.write(String.format("%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\n","First Name","Last Name","Birth Day","Birth Month","Birth Year","Gender","Student E-mail","Mobile Number","Alternate Number","Nationality","Courses"));
-            fw.write("===========================================================================\n");
+           
             
             
            
@@ -202,6 +202,7 @@ public class BasicStudentRegistration extends JFrame implements ActionListener {
                         txtNationality.getText(),
                         cboCourses.getSelectedItem());
                 fw.write(output + "\n");
+                fw.write("============================================================================================================================================================================================\n");
                  fw.close();
             }catch (Exception e) {
             System.out.println(" Exception Error: " + e.getMessage());
@@ -218,7 +219,7 @@ public class BasicStudentRegistration extends JFrame implements ActionListener {
 
             JOptionPane.showMessageDialog(null, "All your information has been saved, have a good day",
                     "Message", JOptionPane.INFORMATION_MESSAGE);
-            System.exit(0);
+            //System.exit(0);
 
         }
     }

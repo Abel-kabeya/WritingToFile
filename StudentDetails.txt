@@ -1,4 +1,36 @@
 ============================== Student Deatils ===================================
 First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
 ===========================================================================
-ggggggg   	wwwwwww   	23        	January   	4444      	Male      	3434wewef 	wsefwefwefwefg	bgdbddtgtg	tddthtyhyhh	Computer Science and IT
+Abel      	Kabeya    	16        	April     	1999      	Male      	abel@gmail.com	0836371549	0734615369	Congolese 	Agriculture and Veterinary
+============================== Student Deatils ===================================
+First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
+===========================================================================
+Abel      	Kabeya    	16        	April     	1999      	Male      	abel@gmail.com	0836371549	0734615369	Congolese 	Agriculture and Veterinary
+============================== Student Deatils ===================================
+First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
+===========================================================================
+Abel      	Kabeya    	16        	April     	1999      	Male      	abel@gmail.com	0836371549	0734615369	Congolese 	Computer Science and IT
+============================== Student Deatils =========================================================================================================
+First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
+Abel      	Kabyea    	16        	April     	1999      	Male      	abel@gmail.com	0836371549	0734615369	Congolese 	Education and Trainning
+=================================================================================================================================================
+============================== Student Deatils ===========================================================================================================================================
+First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
+Christy   	Nzambi    	30        	January   	2002      	Male      	christy@gmail.com	0752365985	0754236589	Congolese 	Engineering
+===================================================================================================================================================================================
+============================== Student Deatils ==============================================================================================================================================
+First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
+Thando    	Malaza    	30        	April     	1998      	Male      	thando@gmail.com	0754236598	0754263658	South African	Social Studies and Media
+============================================================================================================================================================================================
+============================== Student Deatils ============================================================================================================================================
+First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
+Cecile    	Mianda    	1         	March     	1973      	Female    	cecile@gmail.com	0734615369	0836371549	Congolese 	Health and Medicine
+=============================================================================================================================================================================================
+============================== Student Deatils =============================================================================================================================================
+First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
+Willy     	Biayi     	27        	October   	1969      	Male      	willy@gmail.com	0836371549	0734615369	Congolese 	Architecture and Construction
+============================================================================================================================================================================================
+===================================================================================================================================================================== Student Deatils =====
+First Name	Last Name 	Birth Day 	Birth Month	Birth Year	Gender    	Student E-mail	Mobile Number	Alternate Number	Nationality	Courses   
+Abel      	Kabeya    	16        	April     	1999      	Male      	abel@gmail.com	0836371549	0734615369	Congolese 	Computer Science and IT
+============================================================================================================================================================================================
