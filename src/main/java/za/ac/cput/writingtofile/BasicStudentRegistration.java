@@ -163,7 +163,7 @@ public class BasicStudentRegistration extends JFrame implements ActionListener {
         panelSouth.add(btnSave);
         panelSouth.add(btnReset);
         panelSouth.add(btnExit);
-        
+
         btnSave.addActionListener(this);
         btnReset.addActionListener(this);
         btnExit.addActionListener(this);
@@ -176,51 +176,64 @@ public class BasicStudentRegistration extends JFrame implements ActionListener {
         this.setVisible(true);
 
     }
-    
-    public void writeToFile(){
-    
-        try{
-            
+
+    public void writeToFile() {
+
+        try {
+
             FileWriter fw = new FileWriter("StudentDetails.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
-            fw.write("===================================================================================================================================================================== Student Deatils =====\n");
-            fw.write(String.format("%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\n","First Name","Last Name","Birth Day","Birth Month","Birth Year","Gender","Student E-mail","Mobile Number","Alternate Number","Nationality","Courses"));
-           
-            
-            
-           
-                    String output = String.format("%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s",
-                        txtFirstName.getText(),
-                        txtLastName.getText(),
-                        txtDay.getText(),
-                        cboMonth.getSelectedItem(),
-                        txtYear.getText(),
-                        cboGender.getSelectedItem(),
-                        txtStudentEmail.getText(),
-                        txtMobileNumber.getText(),
-                        txtAlternateNumber.getText(),
-                        txtNationality.getText(),
-                        cboCourses.getSelectedItem());
-                fw.write(output + "\n");
-                fw.write("============================================================================================================================================================================================\n");
-                 fw.close();
-            }catch (Exception e) {
+            fw.write("========================================================= Student Deatils ================================================================================================================\n");
+            fw.write(String.format("%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\n", "First Name", "Last Name", "Birth Day", "Birth Month", "Birth Year", "Gender", "Student E-mail", "Mobile Number", "Alternate Number", "Nationality", "Courses"));
+
+            String output = String.format("%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s\t%-10s",
+                    txtFirstName.getText(),
+                    txtLastName.getText(),
+                    txtDay.getText(),
+                    cboMonth.getSelectedItem(),
+                    txtYear.getText(),
+                    cboGender.getSelectedItem(),
+                    txtStudentEmail.getText(),
+                    txtMobileNumber.getText(),
+                    txtAlternateNumber.getText(),
+                    txtNationality.getText(),
+                    cboCourses.getSelectedItem());
+            fw.write(output + "\n");
+            fw.write("==========================================================================================================================================================================================\n");
+            fw.close();
+        } catch (Exception e) {
             System.out.println(" Exception Error: " + e.getMessage());
             System.out.println(" Error occured when writing to file ");
         }
- 
+
     }
 
     @Override
     public void actionPerformed(ActionEvent g) {
         if (g.getSource() == btnSave) {
-            
+
             writeToFile();
 
             JOptionPane.showMessageDialog(null, "All your information has been saved, have a good day",
                     "Message", JOptionPane.INFORMATION_MESSAGE);
-            //System.exit(0);
 
+        } else if (g.getSource() == btnReset) {
+
+            txtFirstName.setText("");
+            txtLastName.setText("");
+            txtDay.setText("");
+            cboMonth.setSelectedItem("");
+            txtYear.setText("");
+            cboGender.setSelectedItem("");
+            txtStudentEmail.setText("");
+            txtMobileNumber.setText("");
+            txtAlternateNumber.setText("");
+            txtNationality.setText("");
+            cboCourses.setSelectedItem("");
+
+        } else if (g.getSource() == btnExit) {
+
+            System.exit(0);
         }
     }
 
